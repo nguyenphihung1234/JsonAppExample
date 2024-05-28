@@ -15,8 +15,8 @@ public class OpenWeatherMapAPI {
     private static final String BASE_URL = "http://api.openweathermap.org/data/2.5/weather";
 
     public static void main(String[] args) {
-        String cityName = "Ho Chi Minh";
-        getCurrentWeather(cityName);
+        WeatherApp app = new WeatherApp();
+        app.start();
     }
 
     public static void getCurrentWeather(String cityName) {
@@ -68,3 +68,4 @@ public class OpenWeatherMapAPI {
         }
     }
 }
+
