@@ -1,26 +1,18 @@
 package slot8;
 
-import java.util.ArrayList;
 import java.util.List;
 
-// Student class
-class Student {
+public class Student {
     private String id;
     private String name;
     private List<Subject> subjects;
 
-    public Student(String id, String name) {
+    public Student(String id, String name, List<Subject> subjects) {
         this.id = id;
         this.name = name;
-        this.subjects = new ArrayList<>();
+        this.subjects = subjects;
     }
 
-    // Add a subject to the student's list of subjects
-    public void addSubject(Subject subject) {
-        subjects.add(subject);
-    }
-
-    // Getters and setters
     public String getId() {
         return id;
     }
@@ -43,5 +35,13 @@ class Student {
 
     public void setSubjects(List<Subject> subjects) {
         this.subjects = subjects;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("ID: ").append(id).append(", Name: ").append(name).append("\n");
+        subjects.forEach(subject -> sb.append("  ").append(subject).append("\n"));
+        return sb.toString();
     }
 }
